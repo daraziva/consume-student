@@ -1,21 +1,22 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\StudentController;
+use App\Http\Controllers\SampahController;
 
 // mengambil semua data & search
-Route::get('/', [StudentController::class, 'index'])->name('home');
+Route::get('/', [SampahController::class, 'index'])->name('home');
 // halaman tambah data
-Route::get('/add', [StudentController::class, 'create'])->name('add');
+Route::get('/add', [SampahController::class, 'create'])->name('add');
 // tambah data
-Route::post('/add/send', [StudentController::class, 'store'])->name('send');
+Route::post('/add/send', [SampahController::class, 'store'])->name('send');
 // menampilkan halaman edit dan mengirim satu datanya
-Route::get('/edit/{id}', [StudentController::class, 'edit'])->name('edit');
+Route::get('/edit/{id}', [SampahController::class, 'edit'])->name('edit');
 // mengubah data
-Route::patch('/update/{id}', [StudentController::class, 'update'])->name('update');
+Route::patch('/update/{id}', [SampahController::class, 'update'])->name('update');
 // hapus data pake softdeletes
-Route::delete('/delete/{id}', [StudentController::class, 'destroy'])->name('delete');
-Route::get('/trash', [StudentController::class, 'trash'])->name('trash');
-Route::get('/trash/restore/{$id}', [StudentController::class, 'restore'])->name('restore');
-Route::get('/trash/delete/permanent/{id}', [StudentController::class, 'permanent'])->name('permanent');
+Route::delete('/delete/{id}', [SampahController::class, 'destroy'])->name('delete');
+Route::get('/trash', [SampahController::class, 'trash'])->name('trash');
+Route::get('/trash/restore/{$id}', [SampahController::class, 'restore'])->name('restore');
+Route::get('/trash/delete/permanent/{id}', [SampahController::class, 'permanent'])->name('permanent');
+
 

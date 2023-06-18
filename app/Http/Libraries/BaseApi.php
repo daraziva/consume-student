@@ -64,7 +64,7 @@ class BaseApi
 
     public function restore(String $endpoint, Array $data = [])
     {
-        return $this->client()->get ($endpoint, $data);
+        return $this->client()->get ($endpoint, $id);
     }
 
     public function permanent(String $endpoint, Array $data = [])
